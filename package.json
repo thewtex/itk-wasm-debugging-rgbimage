@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:emscripten": "itk-wasm -b emscripten-debug -i itkwasm/emscripten:latest-debug build -- -DCMAKE_BUILD_TYPE=Debug",
     "test:emscripten": "node ./index.mjs ./VisibleWomanHeadSlice.png ouput.png",
+    "bindgen": "itk-wasm -b emscripten-debug bindgen --language typescript --package-version 1.0.0 --package-description \"create RGBImage\" --package-name rgbimage-bindings",
     "start": "http-server"
   },
   "author": "sag",
