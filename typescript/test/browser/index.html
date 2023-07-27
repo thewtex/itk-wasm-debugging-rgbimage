@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rgbimage-bindings</title>
+
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:light)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/themes/light.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:dark)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/themes/dark.css"
+    onload="document.documentElement.classList.add('sl-theme-dark');"
+    />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/shoelace-autoloader.js"></script>
   </head>
   <body>
     <div id="app">
@@ -23,6 +36,18 @@
       <p class="read-the-docs">
         Click on the ITK Wasm logo to learn more
       </p>
+
+      <sl-divider></sl-divider>
+
+      <div id="rgbimage-inputs">
+        <sl-textarea disabled resize="auto" required name="input" label="input" help-text="Input rgb image metadata"></sl-textarea>
+        <label for="input-file"><sl-button required variant="primary" outline onclick="this.parentElement.nextElementSibling.click()">Upload</sl-button></label><input type="file" name="input-file" style="display: none"/>
+  <br /><br />
+        <sl-textarea filled resize="auto" name="output" label="output" help-text="Output generated rgb image file" disabled></sl-textarea>
+
+      <sl-divider></sl-divider>
+
+      </div>
     </div>
 
     <script type="module" src="./app.ts"></script>
