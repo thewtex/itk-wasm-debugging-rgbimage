@@ -1,0 +1,20 @@
+{
+  "name": "rgbimage",
+  "version": "1.0.0",
+  "description": "create RGBImage",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:emscripten": "itk-wasm -b emscripten-debug -i itkwasm/emscripten:latest-debug build -- -DCMAKE_BUILD_TYPE=Debug",
+    "test:emscripten": "node ./index.mjs ./VisibleWomanHeadSlice.png ouput.png",
+    "start": "http-server o"
+  },
+  "author": "sag",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "itk-image-io": "^1.0.0-b.94",
+    "itk-wasm": "^1.0.0-b.94"
+  }
+}
